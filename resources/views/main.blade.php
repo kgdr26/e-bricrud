@@ -26,8 +26,10 @@
         <script src="{{asset('assets/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
         <script src="{{asset('assets/vendor/datatables/jquery.dataTables.min.js')}}"></script>
         <script src="{{asset('assets/vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
-        <script src="{{asset('assets/select2/select2.min.js')}} "></script>
-        <script src="{{asset('assets/sweetalert2/sweetalert2.all.min.js')}} "></script>
+        <script src="{{asset('assets/select2/select2.min.js')}}"></script>
+        <script src="{{asset('assets/sweetalert2/sweetalert2.all.min.js')}}"></script>
+        {{-- <script src="{{asset('assets/js/jssha25.js')}}"></script> --}}
+        
         <script>
             $.ajaxSetup({
                 headers: {

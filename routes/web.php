@@ -23,6 +23,8 @@ Route::get('login',['as'=> 'login','uses'=>'AuthController@ShowFormLogin']);
 Route::post('login', ['as'=>'login_post','uses'=>'AuthController@login'] );
 Route::get('logout', ['as'=>'logout','uses'=>'AuthController@logout']);
 
+Route::get('limitasi', ['as'=>'limitasi','uses'=>'AuthController@limitasi']);
+
 Route::middleware(['auth'])->group(function () {
 
     Route::post('upload_img',['as'=>'upload_img','uses'=> 'MainController@upload_img']);

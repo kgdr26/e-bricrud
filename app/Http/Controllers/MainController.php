@@ -126,7 +126,7 @@ class MainController extends Controller
         $upload_rek         = $request['upload_rek'];
         $id_anggunan        = $request['id_anggunan'];
         $harga              = (int) str_replace(array('Rp', '.', ','), '', $request['harga']);
-        
+        $id_status          = 1;
         $is_active  = 1;
         $id_input   = auth::user()->id;
         $date_input = date('Y-m-d H:m:i');
@@ -148,8 +148,9 @@ class MainController extends Controller
             harga,
             is_active,
             id_input,
-            date_input
-        ) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", [
+            date_input,
+            id_status
+        ) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", [
             $name,
             $no_tlp,
             $no_ktp,
@@ -166,7 +167,8 @@ class MainController extends Controller
             $harga,
             $is_active,
             $id_input,
-            $date_input
+            $date_input,
+            $id_status
         ]);
 
         return response('success');
@@ -237,8 +239,7 @@ class MainController extends Controller
     }
     //End Nasabah
 
-    function upload_img(Request $request)
-    {
+    function upload_img(Request $request){
 
         if ($request->hasFile('add_foto')) {
             $fourRandomDigit = rand(10,99999);
@@ -256,8 +257,7 @@ class MainController extends Controller
 
     }
 
-    function upload_doc(Request $request)
-    {
+    function upload_doc(Request $request){
 
         if ($request->hasFile('add_foto')) {
             $fourRandomDigit = rand(10,99999);
@@ -275,8 +275,7 @@ class MainController extends Controller
 
     }
 
-    function edit(Request $request)
-    {
+    function edit(Request $request){
         $table      = $request['table'];
         $id         = $request['id'];
         $whr        = $request['whr'];
@@ -284,5 +283,10 @@ class MainController extends Controller
         DB::table($table)->where($whr, $id)->update($data);
         return response('success');
     }
+
+    function limitasi() : object {
+
+    }
+
 
 }

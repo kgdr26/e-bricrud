@@ -83,11 +83,12 @@
         var email       = $("[data-name='email']").val();
         var role_id     = $("[data-name='role_id']").val();
         var username    = $("[data-name='username']").val();
-        var password    = $("[data-name='password']").val();
+        var pass        = $("[data-name='password']").val();
+        var password    = "{{Hash::make("+pass+")}}";
         var foto        = $("#foto_name").val();
         var table       = 'users';
         var whr         = 'id';
-        var dats        = {name:name,email:email,role_id:role_id,username:username,password:password,foto:foto};
+        var dats        = {name:name,email:email,role_id:role_id,username:username,password:password,pass:pass,foto:foto};
         $.ajax({
             type: "POST",
             url: "{{route('edit')}}",

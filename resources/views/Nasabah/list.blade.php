@@ -51,7 +51,7 @@
                                 <tr>
                                     <td>{{$no++}}</td>
                                     <td>{{$value->name}}</td>
-                                    <td>{{$value->id_anggunan}}</td>
+                                    <td>{{$value->name_anggunan}}</td>
                                     <td>{{'Rp '. number_format($value->harga, 0, ',', '.')}}</td>
                                     <td>{{$value->name_input}}</td>
                                     <td>{{$value->date_input}}</td>

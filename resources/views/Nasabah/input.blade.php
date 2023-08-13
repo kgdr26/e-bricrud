@@ -67,7 +67,7 @@
                             <div class="mb-3">
                                 <label for="" class="form-label">Jenis Agunan</label>
                                 <select data-name="id_anggunan" class="form-select select-2">
-                                    <option value="">-- Select Role --</option>
+                                    <option value="">-- Select Jenis Agunan --</option>
                                     @foreach($anggunan as $key => $value)
                                         <option value="{{$value->id}}">{{$value->name}}</option>
                                     @endforeach
