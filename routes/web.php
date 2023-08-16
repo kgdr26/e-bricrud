@@ -48,5 +48,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('detailnasabah',['as'=> 'detailnasabah','uses'=>'MainController@detailnasabah']);
 
     Route::post('edit',['as'=> 'edit','uses'=>'MainController@edit']);
+    Route::post('edit_user',['as'=> 'edit_user','uses'=>'MainController@edit_user']);
+
+    
 
 });

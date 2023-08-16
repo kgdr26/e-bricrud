@@ -84,18 +84,18 @@
         var role_id     = $("[data-name='role_id']").val();
         var username    = $("[data-name='username']").val();
         var pass        = $("[data-name='password']").val();
-        var password    = "{{Hash::make("+pass+")}}";
+        var password    = $("[data-name='password']").val();
         var foto        = $("#foto_name").val();
         var table       = 'users';
         var whr         = 'id';
         var dats        = {name:name,email:email,role_id:role_id,username:username,password:password,pass:pass,foto:foto};
         $.ajax({
             type: "POST",
-            url: "{{route('edit')}}",
+            url: "{{route('edit_user')}}",
             data: {id:id,table:table,dats:dats,whr:whr},
             cache: false,
             success: function (res) {
-                // console.log(res)
+                console.log(res)
                 $('.preloader').hide();
                 Swal.fire({
                     position:'center',

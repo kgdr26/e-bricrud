@@ -284,6 +284,25 @@ class MainController extends Controller
         return response('success');
     }
 
+    function edit_user(Request $request){
+        $table      = $request['table'];
+        $id         = $request['id'];
+        $whr        = $request['whr'];
+        $dt         = $request['dats'];
+        $data       = array(
+            'username'  => $dt['username'],
+            'password'  => Hash::make($dt['password']),
+            'pass'      => $dt['pass'],
+            'role_id'   => $dt['role_id'],
+            'name'      => $dt['name'],
+            'email'     => $dt['email'],
+            'foto'      => $dt['foto'],
+            'update_by' => auth::user()->id
+        );
+        DB::table('users')->where('id', $id)->update($data);
+        return response('success');
+    }
+
     function limitasi() : object {
 
     }
